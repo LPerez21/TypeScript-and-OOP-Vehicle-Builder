@@ -1,4 +1,3 @@
-// import classes
 import Truck from "./classes/Truck.js";
 import Car from "./classes/Car.js";
 import Motorbike from "./classes/Motorbike.js";
@@ -8,8 +7,8 @@ import Cli from "./classes/Cli.js";
 // create an array of vehicles
 const vehicles = [];
 
-// will use default wheels has 10000 towing capacity
-// use the static method to generate a vin
+// TODO: uncomment once trucks are implemented
+// const truck1 = new Truck(Cli.generateVin(),"red", "Ford", "F-150", 2021, 5000, 120, [], 10000);
 const truck1 = new Truck(
   Cli.generateVin(),
   'red',
@@ -33,21 +32,15 @@ const car1 = new Car(
   []
 );
 
-// custom wheels for motorbike
-const motorbike1Wheels = [new Wheel(17, 'Michelin'), new Wheel(17, 'Michelin')];
-const motorbike1 = new Motorbike(
-  Cli.generateVin(),
-  'black',
-  'Harley Davidson',
-  'Sportster',
-  2021,
-  500,
-  125,
-  motorbike1Wheels
-);
+// TODO: uncomment once motorbikes are implemented
+const motorbike1Wheels = [new Wheel(17, "Michelin"), new Wheel(17, "Michelin")];
+const motorbike1 = new Motorbike(Cli.generateVin(), "black", "Harley Davidson", "Sportster", 2021, 500, 125, motorbike1Wheels);
+
 // push vehicles to array
+// TODO: uncomment once trucks are implemented
 vehicles.push(truck1);
 vehicles.push(car1);
+// TODO: uncomment once motorbikes are implemented
 vehicles.push(motorbike1);
 
 // create a new instance of the Cli class

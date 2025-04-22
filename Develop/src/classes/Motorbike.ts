@@ -2,9 +2,10 @@
 import Vehicle from './Vehicle.js';
 import Wheel from './Wheel.js';
 
-// Motorbike class that extends Vehicle class
+// The Motorbike class should extend the Vehicle class
 class Motorbike extends Vehicle {
   // Declare properties of the Motorbike class
+  // The properties should include vin, color, make, model, year, weight, top speed, and wheels
   vin: string;
   color: string;
   make: string;
@@ -14,7 +15,7 @@ class Motorbike extends Vehicle {
   topSpeed: number;
   wheels: Wheel[];
 
-  // Constructor for the Motorbike class
+  // Constructor that accepts the properties of the Motorbike class
   constructor(
     vin: string,
     color: string,
@@ -25,10 +26,10 @@ class Motorbike extends Vehicle {
     topSpeed: number,
     wheels: Wheel[]
   ) {
-    // Call the constructor of the parent class, Vehicle
+    // The constructor should call the constructor of the parent class, Vehicle
     super();
 
-    // Initialize properties of the Motorbike class
+    // The constructor should initialize the properties of the Motorbike class
     this.vin = vin;
     this.color = color;
     this.make = make;
@@ -37,27 +38,25 @@ class Motorbike extends Vehicle {
     this.weight = weight;
     this.topSpeed = topSpeed;
 
-    // Check if the wheels array has 2 elements
-    // If not, create 2 new Wheel objects
-    // Otherwise, use the provided wheels array
+    // The constructor should check if the wheels array has 2 elements and create 2 new default Wheel objects if it does not
     if (wheels.length !== 2) {
       this.wheels = [new Wheel(), new Wheel()];
     } else {
       this.wheels = wheels;
     }
-  }
 
-  // Method to perform a wheelie
-  wheelie(): void {
+    // Implement the wheelie method
+    // The method should log the message "Motorbike [make] [model] is doing a wheelie!"
     console.log(`Motorbike ${this.make} ${this.model} is doing a wheelie!`);
   }
 
   // Override the printDetails method from the Vehicle class
   override printDetails(): void {
-    // Call the printDetails method of the parent class, Vehicle
+    // The method should call the printDetails method of the parent class
     super.printDetails();
 
-    // Log the details of the Motorbike class
+    // The method should log the details of the Motorbike
+    // The details should include the VIN, make, model, year, weight, top speed, color, and wheels
     console.log(`VIN: ${this.vin}`);
     console.log(`Color: ${this.color}`);
     console.log(`Make: ${this.make}`);
@@ -65,14 +64,12 @@ class Motorbike extends Vehicle {
     console.log(`Year: ${this.year}`);
     console.log(`Weight: ${this.weight} lbs`);
     console.log(`Top Speed: ${this.topSpeed} mph`);
+    console.log(`Wheels: ${this.wheels.length}`);  // Logs number of wheels
+  }
 
-    // Log the details of each wheel
-    console.log(
-      `Wheel 1: ${this.wheels[0].getDiameter} inch with a ${this.wheels[0].getTireBrand} tire`
-    );
-    console.log(
-      `Wheel 2: ${this.wheels[1].getDiameter} inch with a ${this.wheels[1].getTireBrand} tire`
-    );
+  public wheelie(): void {
+    // The method should log the message "Motorbike [make] [model] is doing a wheelie!"
+    console.log(`Motorbike ${this.make} ${this.model} is doing a wheelie!`);
   }
 }
 
